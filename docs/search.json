@@ -7,17 +7,17 @@
     "text": "Project 1\nProject 2\nProject 3\nProject 4"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quarto Web Demo",
-    "section": "",
-    "text": "This is the main landing page!\n\nTo learn more about geezers.\nTo learn more about Quarto websites."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About Me",
+    "title": "About",
     "section": "",
-    "text": "This is where you get to write about yourself.\nIf your favorite color is purple you might show a graph that uses purple."
+    "text": "My name is Beck my favorite color is orange :).\n\n\n\nThis is me"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Beck Tolle’s Super Awesome Website",
+    "section": "",
+    "text": "Hey!\n\n\n\nCat\n\n\n\nTo learn more about Quarto websites."
   }
 ]

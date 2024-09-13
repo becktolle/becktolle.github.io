@@ -2,7 +2,7 @@
 title: "Projects"
 ---
 
-* [Project 1]()
+* [Project 1](https://media.istockphoto.com/id/1334434982/photo/scary-ghost-on-dark-background.jpg?s=2048x2048&w=is&k=20&c=iMzlpuAW266hOHFJYvpvSJbi5RVWvDqfQMoctrcasGY=)
 * [Project 2]()
 * [Project 3]()
 * [Project 4]()

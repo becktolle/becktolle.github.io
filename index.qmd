@@ -1,11 +1,9 @@
 ---
-title: "Quarto Web Demo"
+title: Beck Tolle's Super Awesome Website
 ---
 
-This is the main landing page!
+### Hey!
 
-* To learn more about [geezers](https://www.thegeezer.com/).
+![Cat](photos/cat.JPG)
 
-* To learn more about [Quarto websites](https://quarto.org/docs/websites).
-
-
+-   To learn more about [Quarto websites](https://quarto.org/docs/websites).
