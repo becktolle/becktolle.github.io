@@ -2,6 +2,6 @@
 title: "About"
 ---
 
-My name is Beck my favorite color is orange :).
+![](photos/93f53ba5-d951-4469-be7f-d30705db5cb5.jpg){fig-alt="photo of me with my eyes closed on a sunny day"}
 
-![This is me](photos/me.jpg){width="200"}
+My name is Beck my favorite color is orange :). I'm an artist and a math major at Appalachian State.

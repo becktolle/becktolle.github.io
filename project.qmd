@@ -2,7 +2,9 @@
 title: "Projects"
 ---
 
-* [Project 1](https://media.istockphoto.com/id/1334434982/photo/scary-ghost-on-dark-background.jpg?s=2048x2048&w=is&k=20&c=iMzlpuAW266hOHFJYvpvSJbi5RVWvDqfQMoctrcasGY=)
-* [Project 2]()
-* [Project 3]()
-* [Project 4]()
+![](photos/cacc5b2987509b1bac788cfda7af2e7c.jpg){fig-align="center"}
+
+## These are some of my projects!
+
+-   [Tidyverse Practice](tidyverse.qmd)
+-   [Selected Questions](https://stt2860-f2024.github.io/r4ds-exercises-becktolle/CH01.html)

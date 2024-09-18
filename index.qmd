@@ -4,6 +4,6 @@ title: Beck Tolle's Super Awesome Website
 
 ### Hey!
 
-![Cat](photos/cat.JPG)
+This is my homepage for my super awesome website. Check out my [About](about.qmd) for more about me, or my [Projects](project.qmd) for more of my coding work. Check out my [Artwork](artwork.qmd) page for my art.
 
--   To learn more about [Quarto websites](https://quarto.org/docs/websites).
+![](photos/ac9c8bf0c03f37da242943fc97b590b6.jpg){fig-align="center"}

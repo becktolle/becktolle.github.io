@@ -1,0 +1,8 @@
+---
+title: "Artwork"
+editor: visual
+---
+
+![Coyote](photos/IMG_9600.jpg){fig-align="center" width="441"}
+
+![Basket](photos/IMG_8366.jpg){fig-align="center" width="253"}
