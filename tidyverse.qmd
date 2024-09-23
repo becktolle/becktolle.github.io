@@ -1,7 +1,9 @@
 ---
 title: "Practicing Your Tidyverse Skills: Combining Data Frames"
 editor: visual
+format: revealjs
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE)
 #install.packages("tidyverse")
@@ -11,6 +13,7 @@ library(tidyverse)
 ## Required packages and datasets
 
 Run the code in the code chunk below to leoad the necessary dataset - `happy_full`
+
 ```{r}
 #insta.packages("remotes")
 #remotes::install_github("mathewhirschey/tidybiology", force=TRUE)
@@ -24,6 +27,7 @@ data(happy_full)
 ## Please answer the following questions
 
 Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full`
+
 ```{r}
 glimpse(happy)
 glimpse(happy_join_one)
@@ -48,6 +52,7 @@ bind_cols(happy, happy_join_one)
 ```
 
 Which `join_*` function is a better alternative to the previous solution?
+
 ```{r}
 happy %>%
   inner_join(happy_join_one)
@@ -62,4 +67,3 @@ happy_full %>%
 happy_full %>%
   filter(!country_name %in% happy$country_name)
 ```
-
