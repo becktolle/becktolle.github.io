@@ -26,7 +26,7 @@ data(happy_full)
 
 ## Please answer the following questions
 
-Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full`
+## Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full`
 
 ```{r}
 glimpse(happy)
@@ -35,13 +35,13 @@ glimpse(happy_full)
 
 ```
 
-Combine `happy` and `happy_join_one` by row
+## Combine `happy` and `happy_join_one` by row
 
 ```{r}
 bind_rows(happy, happy_join_one)
 ```
 
-Combine `happy` and `happy_join_one` by column
+## Combine `happy` and `happy_join_one` by column
 
 Note: Check to see if this is even possible
 
@@ -51,14 +51,14 @@ nrow(happy) == nrow(happy_join_one)
 bind_cols(happy, happy_join_one)
 ```
 
-Which `join_*` function is a better alternative to the previous solution?
+## Which `join_*` function is a better alternative to the previous solution?
 
 ```{r}
 happy %>%
   inner_join(happy_join_one)
 ```
 
-Filter out all countries from `happy_full` that are also in `happy`
+## Filter out all countries from `happy_full` that are also in `happy`
 
 ```{r}
 happy_full %>%

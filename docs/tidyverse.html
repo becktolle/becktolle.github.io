@@ -410,7 +410,9 @@
 </section>
 <section id="please-answer-the-following-questions" class="slide level2">
 <h2>Please answer the following questions</h2>
-<p>Take a look at the three data frames- <code>happy</code>, <code>happy_join_one</code>, and <code>happy_full</code></p>
+</section>
+<section id="take-a-look-at-the-three-data-frames--happy-happy_join_one-and-happy_full" class="slide level2">
+<h2>Take a look at the three data frames- <code>happy</code>, <code>happy_join_one</code>, and <code>happy_full</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">glimpse</span>(happy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -454,7 +456,9 @@ $ explained_by_perceptions_of_corruption    &lt;dbl&gt; 0.481, 0.485, 0.413, 0.1
 $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.967, …</code></pre>
 </div>
 </div>
-<p>Combine <code>happy</code> and <code>happy_join_one</code> by row</p>
+</section>
+<section id="combine-happy-and-happy_join_one-by-row" class="slide level2">
+<h2>Combine <code>happy</code> and <code>happy_join_one</code> by row</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">bind_rows</span>(happy, happy_join_one)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -473,7 +477,9 @@ $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.9
 10 Spain               NA    NA            NA                        74.7</code></pre>
 </div>
 </div>
-<p>Combine <code>happy</code> and <code>happy_join_one</code> by column</p>
+</section>
+<section id="combine-happy-and-happy_join_one-by-column" class="slide level2">
+<h2>Combine <code>happy</code> and <code>happy_join_one</code> by column</h2>
 <p>Note: Check to see if this is even possible</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">nrow</span>(happy) <span class="sc">==</span> <span class="fu">nrow</span>(happy_join_one)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -493,7 +499,9 @@ $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.9
 # ℹ 1 more variable: healthy_life_expectancy &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p>Which <code>join_*</code> function is a better alternative to the previous solution?</p>
+</section>
+<section id="which-join_-function-is-a-better-alternative-to-the-previous-solution" class="slide level2">
+<h2>Which <code>join_*</code> function is a better alternative to the previous solution?</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>happy <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">inner_join</span>(happy_join_one)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -508,7 +516,9 @@ $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.9
 5 Spain                6.49 10.6           0.932                    74.7</code></pre>
 </div>
 </div>
-<p>Filter out all countries from <code>happy_full</code> that are also in <code>happy</code></p>
+</section>
+<section id="filter-out-all-countries-from-happy_full-that-are-also-in-happy" class="slide level2">
+<h2>Filter out all countries from <code>happy_full</code> that are also in <code>happy</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>happy_full <span class="sc">%&gt;%</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">anti_join</span>(happy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
