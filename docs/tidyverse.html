@@ -423,6 +423,11 @@ $ ladder_score   &lt;dbl&gt; 4.854, 4.289, 6.180, 5.198, 6.491
 $ gdp            &lt;dbl&gt; 9.240, 8.031, 10.350, 9.826, 10.571
 $ social_support &lt;dbl&gt; 0.746, 0.626, 0.896, 0.913, 0.932</code></pre>
 </div>
+</div>
+</section>
+<section id="take-a-look-at-the-three-data-frames--happy-happy_join_one-and-happy_full-pt.2" class="slide level2">
+<h2>Take a look at the three data frames- <code>happy</code>, <code>happy_join_one</code>, and <code>happy_full</code> pt.2</h2>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">glimpse</span>(happy_join_one)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5
@@ -430,6 +435,11 @@ Columns: 2
 $ country_name            &lt;chr&gt; "Iraq", "Comoros", "Panama", "Maldives", "Spai…
 $ healthy_life_expectancy &lt;dbl&gt; 60.583, 57.349, 69.652, 70.600, 74.700</code></pre>
 </div>
+</div>
+</section>
+<section id="take-a-look-at-the-three-data-frames--happy-happy_join_one-and-happy_full-pt.3" class="slide level2">
+<h2>Take a look at the three data frames- <code>happy</code>, <code>happy_join_one</code>, and <code>happy_full</code> pt.3</h2>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">glimpse</span>(happy_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 149
@@ -544,9 +554,13 @@ $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.9
 #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
 #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;, …</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># or</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>happy_full <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span>country_name <span class="sc">%in%</span> happy<span class="sc">$</span>country_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-out-all-countries-from-happy_full-that-are-also-in-happy-pt.-2" class="slide level2">
+<h2>Filter out all countries from <code>happy_full</code> that are also in <code>happy</code> pt.&nbsp;2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>happy_full <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span>country_name <span class="sc">%in%</span> happy<span class="sc">$</span>country_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 144 × 20
    country_name region          ladder_score standard_error_of_la…¹ upperwhisker
