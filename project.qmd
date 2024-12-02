@@ -8,3 +8,4 @@ title: "Projects"
 
 -   [Tidyverse Practice](tidyverse.qmd)
 -   [Selected Questions](https://stt2860-f2024.github.io/r4ds-exercises-becktolle/CH01.html)
+-   [Project One](https://stt2860-f2024.github.io/bicycle-sharing-becktolle/)

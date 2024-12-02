@@ -33,13 +33,13 @@ glimpse(happy)
 
 
 ```
-## Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full` pt.2
+## Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full` 
 
 ```{r}
 glimpse(happy_join_one)
 
 ```
-## Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full` pt.3
+## Take a look at the three data frames- `happy`, `happy_join_one`, and `happy_full` 
 ```{r}
 glimpse(happy_full)
 ```
@@ -74,7 +74,7 @@ happy_full %>%
   anti_join(happy)
 
 ```
-## Filter out all countries from `happy_full` that are also in `happy` pt. 2
+## Filter out all countries from `happy_full` that are also in `happy`
 ```{r}
 
 happy_full %>%

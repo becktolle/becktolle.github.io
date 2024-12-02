@@ -11,6 +11,8 @@ website:
       - about.qmd
       - project.qmd
       - artwork.qmd
+      - href: https://www.google.com/search?q=wikepedia&rlz=1C1GCEA_enUS1124US1124&oq=wikepedia&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQABgKGIMBGLEDGIAEMg8IAhAuGAoYgwEYsQMYgAQyDwgDEAAYChiDARixAxiABDIMCAQQABgKGLEDGIAEMgwIBRAAGAoYsQMYgAQyDwgGEAAYChiDARixAxiABDIGCAcQBRhA0gEIMjcwM2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8
+        text: check here
     
     tools:
       - icon: trash
