@@ -1,9 +1,11 @@
 ---
 title: "Project #2"
 ---
+
 # Set Up
 
 For my final project I'm going to be anaylzing the `outer_space_objects` dataset. Let's start by loading it in and looking at the structure of the dataset.
+
 
 ```{r, echo=FALSE, warning=FALSE, results=FALSE, include=FALSE, fig.show='hide'}
 library(tibble)
@@ -14,10 +16,10 @@ outer_space_objects <- as.tibble(outer_space_objects)
 
 ```
 
-
 ```{r}
 outer_space_objects
 ```
+
 
 It looks like that the dataset is composed of 4 variables and 1175 observations. 
 
@@ -51,6 +53,7 @@ Looking through the data it appears that the non-country entities are:
 
 Looks like you can categorize these into multinational and private organizations.
 
+
 ```{r}
 outer_space_objects$Organization <- "Country"
 outer_space_objects %>% arrange(Code)
@@ -59,12 +62,15 @@ outer_space_objects$Organization[c(291:311, 469:511, 843, 904)] <- "Private"
 outer_space_objects <- outer_space_objects %>%
   select(-Code)
 ```
+
 ```{r, echo=FALSE, warning=FALSE}
 outer_space_objects <- outer_space_objects %>%
   filter(Entity != "Israel")
 ```
 
+
 # General Observations
+
 
 ```{r, echo=FALSE}
 outer_space_objectsy <- outer_space_objects %>%
@@ -77,7 +83,9 @@ ggplot(outer_space_objectsy, aes(x=Year, y=num_objects, group=1))+
   theme_minimal()+
   labs(y= "Number of Objects Launched")
 ```
+
 The amount of objects launched into space have only significantly increased in the last 15 years, this is almost certainly due to the internet age.
+
 ```{r}
 outer_space_objects2 <- outer_space_objects %>%
 select(-Year)%>%
@@ -85,11 +93,15 @@ select(-Year)%>%
     summarise(across(num_objects, sum))%>%
   arrange(desc(num_objects))
 ```
+
 I've removed the year column and combined each country data set so we have a flat rate of total objects launched.
+
 ```{r, echo=FALSE}
 outer_space_objects2
 ```
+
 The World has the most objects launched into space by far. Followed by the US, Russia, China and the UK. Note that these are objects launched exclusively by each countries government, and not necessarily objects launched on their soil, or all objects each country has participated in launching.
+
 
 ```{r}
 outer_space_objects3 <- outer_space_objects2
@@ -99,7 +111,9 @@ outer_space_objects3 %>%
       summarise(across(num_objects, sum))%>%
   arrange(desc(num_objects))
 ```
+
 I've combined all the other entities that weren't in the top five into an `Other` variable to make it easier to graph.
+
 
 ```{r, echo=FALSE}
 sumobj <- sum(outer_space_objects3$num_objects)
@@ -109,11 +123,13 @@ ggplot(outer_space_objects3, aes(x="", y=num_objects/sumobj, fill=Entity)) +
     theme_minimal()+
   labs(y= "Proportion of Objects Launched by Country")
 ```
+
 World makes up half of all objects launched into space.
 
 <br>
 
 Now, let's graph number of objects per year, faceting for the type of organization.
+
 
 ```{r, echo=FALSE}
 outer_space_objectsf <- outer_space_objects %>%
@@ -128,9 +144,11 @@ ggplot(outer_space_objectsf, aes(x=Year, y=num_objects, Color=Organization))+
   labs(y= "Number of Objects Launched")
 ```
 
+
 It looks like private organizations launch significantly less objects than multinational organizations or individual countries. The highest producer of objects are multinational organizations. We're going to focus on multinational organizations and countries.
 
 # Multinational Organizations
+
 
 ```{r}
 objectsmult <- outer_space_objects %>%
@@ -145,12 +163,15 @@ ggplot(objectsmult, aes(fill=Entity))+
   theme_minimal()+
   theme(axis.text.x=element_blank())
 ```
+
 The world data is significantly skewing the rest of the data, lets remove it.
+
 
 ```{r}
 objmult2 <- objectsmult %>%
   filter(Entity!="World")
 ```
+
 ```{r, echo=FALSE}
 ggplot(objmult2, aes(fill=Entity))+
          geom_bar(aes(Entity, num_objects), stat="identity")+
@@ -159,7 +180,9 @@ ggplot(objmult2, aes(fill=Entity))+
   theme(axis.text.x=element_blank())
 ```
 
+
 Now that the World data is removed we can tell that the highest preforming Organization is the ESA and EU. This is most likely because Europe has strong unification as a continent.
+
 
 ```{r, echo=FALSE, warning=FALSE}
 ggplot(objectsmult, aes(color=Entity))+
@@ -176,11 +199,13 @@ ggplot(objmult2, aes(color=Entity))+
   facet_wrap(~Entity)+
   guides(color="none")
 ```
+
 I provided a graph with and without the World entity to help visualize the data better. Not only have World based projects been in production for about 20 years longer than any other entity, they are more consistent and launch significantly more objects into space.
 
 # Countries
 
 First I'm going to sort all of the countries into continents to easier analyse the data.
+
 
 ```{r}
 library(countrycode)
@@ -215,7 +240,9 @@ ggplot(countobj2, aes(color=Continent))+
 
 ```
 
+
 It looks like the Americas wins by a long shot, which I'm sure is mostly due to the US. Let's check.
+
 
 ```{r}
 countobj2 <- countobj %>%
@@ -226,6 +253,8 @@ countobj2 <- countobj %>%
 countobj2
 ```
 
+
 # Conclusion
 
 I was pleasantly surprised to find that most of the objects that are launched into space are done collectively. I had some perception that this was the case, but I wasn't sure how it was labelled or kept as data, whether it was done by launching location, who worked on it the most or if it was considered a "group" effort and each country is mentioned separately.
+
