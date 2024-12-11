@@ -67,8 +67,13 @@ outer_space_objects <- outer_space_objects %>%
 # General Observations
 
 ```{r, echo=FALSE}
-ggplot(outer_space_objects, aes(x=Year, y=num_objects))+
-  geom_line()+
+outer_space_objectsy <- outer_space_objects %>%
+select(-Entity)%>%
+  group_by(Year)%>%
+    summarise(across(num_objects, sum))%>%
+  arrange(desc(num_objects))
+ggplot(outer_space_objectsy, aes(x=Year, y=num_objects, group=1))+
+  geom_line(aes(group=1))+
   theme_minimal()+
   labs(y= "Number of Objects Launched")
 ```
@@ -111,7 +116,12 @@ World makes up over half of all objects launched into space.
 Now, let's graph number of objects per year, faceting for the type of organization.
 
 ```{r, echo=FALSE}
-ggplot(outer_space_objects, aes(x=Year, y=num_objects, Color=Organization))+
+outer_space_objectsf <- outer_space_objects %>%
+select(-Entity)%>%
+  group_by(Year, Organization)%>%
+    summarise(across(num_objects, sum))%>%
+  arrange(desc(num_objects))
+ggplot(outer_space_objectsf, aes(x=Year, y=num_objects, Color=Organization))+
   geom_line(aes(color=Organization))+
   facet_wrap(~Organization)+
   theme_minimal()+
@@ -184,13 +194,19 @@ countobj$Continent <- countrycode(sourcevar = countobj$Entity,
 ```
 
 ```{r, echo=FALSE}
-ggplot(countobj, aes(fill=Continent))+
+countobj2 <- countobj %>%
+select(-Entity)%>%
+  group_by(Continent, Year)%>%
+    summarise(across(num_objects, sum))%>%
+  arrange(desc(num_objects))
+
+ggplot(countobj2, aes(fill=Continent))+
          geom_bar(aes(Continent, num_objects), stat="identity")+
   labs(y="Number of Objects Launched", Title= "Number of Objects launched (total) per Continent")+
   theme_minimal()+
   theme(axis.text.x=element_blank())
 
-ggplot(countobj, aes(color=Continent))+
+ggplot(countobj2, aes(color=Continent))+
          geom_line(aes(Year, num_objects))+
   labs(y="Number of Objects Launched", Title= "Number of Objects launched (total) per Continent")+
   theme_minimal()+
